@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+    <title>The Proof</title>
+    <link rel="stylesheet" type="text/css" href="proof.css" />
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']]
+            },
+            TeX: {
+                Macros: {
+                    N: "{\\mathbb N}",
+                    Z: "{\\mathbb Z}",
+                    Q: "{\\mathbb Q}",
+                    C: "{\\mathbb C}",
+
+                    I: "{\\mathbf I}",
+                    V: "{\\mathbf V}",
+
+                    II: "{\\mathcal I}",
+                    A: "{\\mathcal A}",
+
+                    pmid: "{{\\ \\mid\\ }}",
+                    minuszero: "{{\\setminus\\{0\\}}}"
+                }
+            }
+        });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+    <script type="text/javascript">
+    $(function(){
+        $(".theorem").prepend("<b>Theorem.</b>");
+        $(".lemma").prepend("<b>Lemma.</b>");
+        $(".corollary").prepend("<b>Corollary.</b>");
+        $(".proof").prepend("<i>Proof.</i>");
+        $(".claim").prepend("<b>Claim.</b>");
+    });
+    </script>
+
+    <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <header></header>
+
+    <article>
+        <h1>Vandermonde Matrix</h1>
+
+        <p>For given numbers $a_0,\dots,a_{n-1}$, a <em>Vandermonde matrix</em>
+        is an $n \times n$ matrix defined by
+        \[
+            V = \begin{pmatrix}
+                1 & a_0 & a_0^2 & \dots & a_0^{n-1} \\
+                1 & a_1 & a_1^2 & \dots & a_1^{n-1} \\
+                && \vdots && \\
+                1 & a_{n-1} & a_{n-1}^2 & \dots & a_{n-1}^{n-1}
+            \end{pmatrix}.
+        \]
+        I stumbled upon this wonderful proof that $V$ is regular if and only if
+        $a_1,\dots,a_n$ are pairwise distinct.</p>
+
+        <p>Clearly, if two $a_i$ are the same, the matrix has two equal rows and
+        therefore is singular. Let us suppose that they are distinct; we will
+        show that $V$ is regular.</p>
+
+        <div class="claim">
+            Let $f(x) = c_0 + c_1x + \dots + c_{n-1}x^{n-1}$ be a polynomial of
+            degree smaller than $n$. Then
+            \[
+                V \ \begin{pmatrix}
+                    c_0 \\ c_1 \\ \vdots \\ c_{n-1}
+                \end{pmatrix} = \begin{pmatrix}
+                    f(a_0) \\ f(a_1) \\ \vdots \\ f(a_{n-1})
+                \end{pmatrix}.
+            \]
+        </div>
+        <div class="proof">
+            That is just a straightforward matrix multiplication.
+        </div>
+
+        <p>Suppose that $c = (c_0,\dots,c_{n-1})$ is a vector such that $Vc^T = 0$.
+        Then the polynomial $f(x)$ with coefficients $c_i$ has $n$ distinct
+        roots $a_0,\dots,a_{n-1}$. But it is of degree smaller than $n$,
+        therefore it must be the zero polynomial. So every $c_i$ is zero, and
+        $V$ is regular.</p>
+    </article>
+
+    <footer></footer>
+</body>
+</html>
