@@ -1,35 +1,8 @@
 /* CSS is stupid */
 * { margin: 0; padding: 0; }
 html, body { height: 100%; }
-
-body { font: 12pt/1.625 open_sansregular,HelveticaNeue,Helvetica,Arial,sans-serif; 
-    text-align: center; color: hsla(0,0%,0%,0.8);
-    /*background-image: url('./res/background.jpg');*/
-}
+body { font: 12pt/1.625 open_sansregular,HelveticaNeue,Helvetica,Arial,sans-serif; text-align: center; }
 h1 { font-family: 'Nunito', sans-serif; font-size: 200%; padding-top: 30px; }
-article { margin: 20px auto; text-align: justify; max-width: 680px; text-indent: 20px;
-    /*background-image: url('./res/background.jpg');*/
-    /*background-color: #f3efe6;*/
-}
+article { margin: 20px auto; text-align: justify; max-width: 680px; text-indent: 20px; }
 article > * { margin: 10px; }
-
-/*header, footer { height: 40px; background-image: url('./res/stripe.png'); width: 100%; }
-header {margin-bottom: 40px;}
-footer {bottom: 0px; position: absolute; margin-top: 50px;}
-*/
-.MathJax {
-    color: hsla(240,75%,48%,1);
-    /*color: hsla(0,0%,0%,0.8);*/
-}
-.MathJax_Display .MathJax {
-    /*color: hsla(240,75%,40%,1);*/
-    color: hsla(0,0%,0%,0.8);
-}
-.theorem, .lemma, .claim, .corollary, .proof { margin: 20px 0; padding: 4px 10px; text-indent: 0;
-    /*border-top: #ccc 1px solid; border-bottom: #ccc 1px solid;}*/}
-.theorem {background: hsla(240, 40%, 90%, 0.1); }
-.lemma {background: hsla(180, 40%, 90%, 0.1); }
-.proof {background: hsla(180, 40%, 90%, 0.2); border-left: darkgray 1px solid; }
-.corollary {background: hsla(120, 40%, 90%, 0.1); }
-/*.claim {background: hsla(60, 40%, 90%, 0.1); }*/
-.claim {background: hsla(60, 70%, 75%, 0.1); border: darkgray 1px solid; }
+.theorem, .lemma, .claim, .corollary, .proof { margin: 20px 0; padding: 4px 10px; text-indent: 0; }
