@@ -2,9 +2,6 @@
 <html>
 <head>
     <title>The Proof</title>
-    <link rel="stylesheet" type="text/css" href="proof.css" />
-    <link rel="stylesheet" type="text/css" href="solarized.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="color.css" /> -->
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
             tex2jax: {
@@ -29,19 +26,13 @@
             }
         });
     </script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="webproof.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-    <script type="text/javascript">
-    $(function(){
-        $(".theorem").prepend("<b>Theorem.</b>");
-        $(".lemma").prepend("<b>Lemma.</b>");
-        $(".corollary").prepend("<b>Corollary.</b>");
-        $(".proof").prepend("<i>Proof.</i>");
-        $(".claim").prepend("<b>Claim.</b>");
-    });
-    </script>
-
+    <link rel="stylesheet" type="text/css" href="proof.css" />
+    <link id="colorscheme" rel="stylesheet" type="text/css" href="solarized-pure.css" />
     <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -88,6 +79,12 @@
         therefore it must be the zero polynomial. So every $c_i$ is zero, and
         $V$ is regular.</p>
     </article>
+
+    <aside>
+        <a href="#" onclick="return changeCss(this);">solarized.css</a>
+        <a href="#" onclick="return changeCss(this);">solarized-pure.css</a>
+        <a href="#" onclick="return changeCss(this);">color.css</a>
+    </aside>
 
     <footer></footer>
 </body>

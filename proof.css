@@ -5,4 +5,9 @@ body { font: 12pt/1.625 open_sansregular,HelveticaNeue,Helvetica,Arial,sans-seri
 h1 { font-family: 'Nunito', sans-serif; font-size: 200%; padding-top: 30px; }
 article { margin: 20px auto; text-align: justify; max-width: 680px; text-indent: 20px; }
 article > * { margin: 10px; }
-.theorem, .lemma, .claim, .corollary, .proof { margin: 20px 0; padding: 4px 10px; text-indent: 0; }
+.theorem, .lemma, .claim, .proof { margin: 20px 0; padding: 4px 10px; text-indent: 0; }
+.theorem .title, .lemma .title, .claim .title { font-weight: bold; }
+.proof .title { font-style: italic; }
+
+aside { position: absolute; top: 5px; left: 5px; text-align: left; font-size: small; }
+aside a { display: block; color: gray; text-decoration: none; }

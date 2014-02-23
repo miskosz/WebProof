@@ -1,5 +1,8 @@
 body { background-color: #FDF6E3; color: #657B83; }
 h1 { color: #586E75; }
 *:not(.MathJax_Display) > .MathJax { color: #B58900; }
+
 .claim { background: #073642; color: #839496; }
+.claim .title { color: #93A1A1; }
+
 .proof { background: #EEE8D5; }

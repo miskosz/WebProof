@@ -2,7 +2,9 @@ body { background-color: #FDF6E3; color: #657B83; }
 h1 { color: #586E75; }
 .MathJax { color: #96627B; }
 
-.claim { background: #96627B; color: #EEE8D5; }
+.claim { background: #96627B; color: #494955; }
 .claim .MathJax { color: #EEE8D5; }
+.claim .title { color: #EEE8D5; }
 
 .proof { background: #EEE8D5; }
+.proof .title { font-style: italic; font-weight: normal; }
