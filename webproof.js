@@ -1,6 +1,11 @@
 $(function(){
+    $(".proof").prepend('<span class="title">Proof.</span>');
     $(".claim").prepend('<span class="title">Claim.</span>');
-    $(".proof").prepend('<span class="title">Proof.</i>');
+    // $(".lemma").prepend('<span class="title">Lemma.</span>');
+    $(".lemma").each(function(i){
+        i++;
+        $(this).prepend('<span class="title">Lemma '+i+'.</span>');
+    });
 });
 
 function changeCss(elem) {

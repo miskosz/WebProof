@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+    <title>The Proof</title>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\$','\$']]
+            },
+        });
+    </script>
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="webproof.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <link rel="stylesheet" type="text/css" href="proof.css" />
+    <link id="colorscheme" rel="stylesheet" type="text/css" href="color.css" />
+    <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <header></header>
+
+    <article>
+<h1>Bertrand's Postulate - Paul &Euml;rdos' First Published Paper</h1>
+
+<h3>By Alexander Bogomolny, taken from <a href="http://www.cut-the-knot.org/arithmetic/algebra/BertrandPostulate.shtml">Cut The Knot.</a></h3>
+
+<p>If there was competition for the most misnamed math fact, "Bertrand's Postulate" would be certainly among the very top contenders. The statement of the "postulate" was conjectured in 1845 by Joseph Bertrand and first proved by Pafnuty Chebyshev in 1850. So, between 1845 and 1850 it should have been called a conjecture, and afterwards a theorem (which is how it is sometimes being referred to.) The word "postulate" has probably stuck with it because Bertrand had verified its validity empirically for all $n\lt 3000000$. But what is this theorem? There are two slightly different formulations:</p>
+
+<p class="note">
+For every $n\gt 1$, there is some prime $p$ with $n\lt p\lt 2n$. 
+</p>
+
+<p>Or, equivalently,</p>
+
+<p class="note">
+For every $n\ge 1$, there is some prime $p$ with $n\lt p\le 2n$. 
+</p>
+
+<p>The theorem has been also proved by the famous Indian mathematician Ramanujan and in 1932 by Paul &Euml;rdos when he was only 19 years old. This was &Euml;rdos' - who in time became the most prolific mathematician of all times - the very first paper. <a href="#Erdos">&Euml;rdos</a> used bounds on the magnitude of the central binomial coefficient to prove the statement for $l\ge 4000$, leaving the smaller values for manual (or nowadays computer) verification. Even without computers that was not a big deal. With an attribution to Edmund Landau, &Euml;rdos produced a sequence of primes
+\[
+    2,3,5,7,13,23,43,83,163,317,631,1259,2503,4001,
+\]
+in which each number is smaller than twice its predecessor. Thus in any interval $[n,2n]$, with $n\le 4000$, there is bound to be a prime - a member from the sequence.</p>
+
+<p>Several books I came across follow &Euml;rdos' original ideas. To the extent I can judge (I do not read German), <a href="#BOOK">Aigner and Ziegler</a> give a most faithful presentation of &Euml;rdos' proof, although, as they claim, of not the original one. In <a href="#Dudley">Underwood Dudley's variant</a>, the reader is required to verify the theorem for $n\le 2787$ while <a href="#Moll">Victor Moll</a> leaves for manual verification only $n\le 467$.</p>
+
+<!-- <h3>Lemma 1</h3> -->
+
+<div class="lemma">
+For all integer $n\gt 0$,
+\[
+    {2n \choose n} \ge \frac{4^n}{2n+1}
+\]
+</div>
+
+<div class="proof">
+${2n \choose n}$ is the central binomial coefficient: ${2n \choose n}=\frac{(2n)!}{n!n!}$, it's the largest of all coefficients in the expansion of $(1+1)^{2n}=\sum_{k=0}^{2n}{2n \choose k}$. This shows that $4^{n}=2^{2n}\le (2n+1){2n \choose n}$.
+</div>
+
+<p>The next step is to determine the $p$-<a href="http://www.cut-the-knot.org/blue/LegendresTheorem.shtml">adic valuation</a> of ${2n \choose n}$. This will be based on the following property of the valuation:</p>
+
+<!-- <h3>Lemma 2</h3> -->
+
+<div class="lemma">
+For integers $a,b$,
+\begin{align}
+\nu_{p}(a\cdot b)&=\nu_{p}(a) + \nu_{p}(b) \quad\text{and} \\
+\nu_{p}(\frac{a}{b})&=\nu_{p}(a) - \nu_{p}(b).
+\end{align}
+</div>
+
+<!-- <h3>Lemma 3</h3> -->
+
+<div class="lemma">
+If $\frac{2n}{3}\lt p \le n$, then $\nu_{p}({2n \choose n}) = 0.$
+In other words, $p$ does not divide $ {2n \choose n}$.
+</div>
+
+<div class="proof">
+If $\frac{2n}{3}\lt p \le n$, $(2n)!$ has two factors of $p$ - one coming from $p$, the other from $2p$, while $\nu_{p}(n!)$ has exactly one factor.
+As a consequence of Lemma 2,
+\[
+    \nu_{p}({2n \choose n}) = \nu_{p}((2n)!)-2\nu_{p}(n!) = 2 - 2\cdot 1 = 0.
+\]
+</div>
+
+<!-- <h3>Lemma 4</h3> -->
+
+<div class="lemma">
+If $p$ divides ${2n \choose n}$, then $\nu_{p}({2n \choose n})\le\mbox{log}_{p}(2n)$.
+</div>
+<div class="proof">
+Define $r(p)$ by the inequalities $p^{r(p)}\le 2n \lt p^{r(p)+1}$. Then, like in the proof of <a href="http://www.cut-the-knot.org/blue/LegendresTheorem.shtml">Legendre's Theorem</a>,
+\begin{align}
+\nu_{p}({2n \choose n}) &= \nu_{p}((2n)!)-2\nu_{p}(n!) \\
+&= \sum_{i=1}^{r(p)}\left( \Big\lfloor\frac{2n}{p^i}\Big\rfloor - 2\Big\lfloor\frac{n}{p^i}\Big\rfloor \right) \\
+&\le r(p),
+\end{align}
+because, for $x\in\mathbb{R}$, $\lfloor 2x\rfloor - 2\lfloor x\rfloor$ is either $0$ or $1$.
+</div>
+
+<!-- <h3>Lemma 5</h3> -->
+
+<div class="lemma">
+For $n\in\mathbb{N}$ and the product running over primes:
+\[
+    \prod_{p\le n}p\le 4^n.
+\]
+</div>
+
+<div class="proof">
+The argument is by <a href="http://www.cut-the-knot.org/induction.shtml">induction</a> on $n$. For $n=1$, the claim follows by definition of an "empty" product: $ \prod_{p\le 1}p = 1\le 4$. For $n=2$, it reduces to $2\le 4^2$. For even $n\ge 4$, by induction
+\[
+    \prod_{p\le n}p = \prod_{p\le n-1}p \le 4^{n-1}\lt 4^n.
+\]
+
+<p>For odd $n$, say $n=2m+1$, 
+\[
+    \prod_{p\le n}p = \prod_{p\le m+1}p\times \prod_{p\le m+2}^{2m+1}p \le 4^{m+1}{2m+1 \choose m},
+\]
+where the first product is bounded by the inductive hypothesis, while the bound for the second product stems from the fact that ${2m+1 \choose m}$ is divisible by every prime $p$ in the range $m+2\le p\le 2m+1$. The required inequality then follows from ${2m+1 \choose m}\le 2^{2m}$. The latter follows from the <a href="http://www.cut-the-knot.org/arithmetic/combinatorics/BinomialTheorem.shtml">binomial theorem</a>:
+\[
+    2{2m+1 \choose m} = {2m+1 \choose m} + {2m+1 \choose m+1} \le \sum_{i=0}^{2m+1}{2m+1 \choose i} = (1+1)^{2m+1}.
+\]
+</p>
+</div>
+
+<h3>Proof of Bertrand's Postulate</h3>
+
+<p>Assume that, for some $n$, there is no prime $p$, $n\lt p\le 2n$. The central binomial coefficient ${2n \choose n}$ has at most $\sqrt{2n}$ prime factors smaller than $\sqrt{2n}$. The contribution of each of these factors to ${2n \choose n}$ does not exceed $2n$. On the other hand, by Lemma 4, every prime $p\ge\sqrt{2n}$ satisfies $\nu_{p}({2n \choose n})\le 1$. Combining these gives
+\begin{align}
+    {2n\choose n}&\le (2n)^{\sqrt{2n}}\prod_{\sqrt{2n}\lt p\le 2n/3}p \\
+    &\le (2n)^{\sqrt{2n}}\prod_{p=2}^{2n/3}p \\
+    &\le (2n)^{\sqrt{2n}}4^{2n/3}.
+\end{align}
+Together with Lemma 1, this leads to
+\[
+    \frac{4^n}{2n+1}\le (2n)^{\sqrt{2n}}4^{2n/3},
+\]
+which may be rewritten as
+\[
+    4^{n/3}\le (2n+1)(2n)^{\sqrt{2n}}.
+\]
+This inequality fails for $n\ge 468$. As was mentioned at the beginning, Bertrand's Postulate can be manually verified for $n\le 467$.
+</p>
+
+<h3>Reference</h3>
+<ol>
+<li><a name="BOOK">M. Aigner, G. Ziegler, <a href="http://www.amazon.com/exec/obidos/ISBN=3540636986/ctksoftwareincA/"><em>Proofs from THE BOOK</em></a>, Springer, 2000, 7-13
+<li><a name="Dudley">U. Dudley, <a href="http://www.amazon.com/exec/obidos/ISBN=048646931X/ctksoftwareincA/"><em>Elementary Number Theory</em></a>, Dover, 2008, 177-179
+<li><a name="Erdos">P. &Euml;rdos, <a href="http://www.renyi.hu/~p_erdos/1932-01.pdf"><u>Beweis eines Satzes von Tschebyshef</u></a>, <em>Acta Sci. Math</em> (Szeged) <b>5</b> (1930-1932), 194-198 (in German)
+<li><a name="Concrete">R. Graham, D. Knuth, O. Patashnik, <a href="http://www.amazon.com/exec/obidos/ISBN=0201558025/ctksoftwareincA/"><i>Concrete Mathematics</i></a>, 2nd edition, Addison-Wesley, 1994
+<li><a name="Moll">V. H. Moll, <a href="http://www.amazon.com/exec/obidos/ISBN=0821887955/ctksoftwareincA/"><em>Numbers and Functions: From a Classical-Experimental Mathematician's Point of View</em></a>, AMS, 2012, 89-91
+</ol>
+
+    <aside>
+        <a href="#" onclick="return changeCss(this);">solarized.css</a>
+        <a href="#" onclick="return changeCss(this);">solarized-pure.css</a>
+        <a href="#" onclick="return changeCss(this);">color.css</a>
+    </aside>
+
+    <footer></footer>
+</body>
+</html>

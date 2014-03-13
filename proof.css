@@ -1,12 +1,12 @@
 /* CSS is stupid */
 * { margin: 0; padding: 0; }
 html, body { height: 100%; }
-body { font: 12pt/1.625 open_sansregular,HelveticaNeue,Helvetica,Arial,sans-serif; text-align: center; }
-h1 { font-family: 'Nunito', sans-serif; font-size: 200%; padding-top: 30px; }
+body { font: 12pt/1.725 open_sansregular,HelveticaNeue,Helvetica,Arial,sans-serif; text-align: center; }
+h1 { font-family: 'Nunito', sans-serif; font-size: 200%; padding-top: 30px; text-align: left; }
 article { margin: 20px auto; text-align: justify; max-width: 680px; text-indent: 20px; }
 article > * { margin: 5px 10px; padding: 4px 10px;}
-.theorem, .lemma, .claim, .proof { text-indent: 0; }
-.theorem .title, .lemma .title, .claim .title { font-weight: bold; }
+.theorem, .lemma, .claim, .proof, .note { text-indent: 0; margin: 15px 10px; }
+.theorem .title, .lemma .title, .claim .title { font-weight: bold; margin-right: 5px; }
 .proof .title { font-style: italic; }
 
 aside { position: absolute; top: 5px; left: 5px; text-align: left; font-size: small; }
