@@ -3,9 +3,9 @@ h1 { color: #586E75; }
 a { color: #2aa198; }
 a:hover { text-decoration: none; }
 /**:not(.MathJax_Display) > .MathJax { color: #657B83; }*/
-.MathJax { color: #2aa198; }
+.MathJax { color: #586E75; }
 
-.claim, .theorem, .lemma, .note, .proof { background: #F3F3F3; border-radius: 5px; }
+.WebProofTheorem, .note, .proof { background: #F3F3F3; border-radius: 5px; }
 /*.claim .title { color: #93A1A1; }*/
 
 /*.proof { background: #F3F3F3; border-radius: 5px; }*/

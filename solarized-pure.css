@@ -1,8 +1,12 @@
 body { background-color: #FDF6E3; color: #657B83; }
 h1 { color: #586E75; }
-*:not(.MathJax_Display) > .MathJax { color: #B58900; }
+a { color: #2aa198; }
+a:hover { text-decoration: none; }
+.MathJax { color: #586e75; }
 
-.claim { background: #073642; color: #839496; }
-.claim .title { color: #93A1A1; }
+.WebProofTheorem { background: #073642; color: #839496; }
+.WebProofTheorem .MathJax { color: #93a1a1; }
+.WebProofTheorem .title { color: #93A1A1; }
 
-.proof { background: #EEE8D5; }
+.proof, .note { background: #EEE8D5; }
+.WebProofTheorem + .proof { margin-top: -20px; }

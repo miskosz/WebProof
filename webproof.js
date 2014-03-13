@@ -1,4 +1,8 @@
 $(function(){
+
+    theorem_envs = ".theorem, .claim, .lemma";
+    $(theorem_envs).addClass("WebProofTheorem");
+
     $(".proof").prepend('<span class="title">Proof.</span>');
     $(".claim").prepend('<span class="title">Claim.</span>');
     // $(".lemma").prepend('<span class="title">Lemma.</span>');
