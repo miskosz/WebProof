@@ -1,10 +1,10 @@
 body { background-color: #FDF6E3; color: #657B83; }
 h1 { color: #586E75; }
-.MathJax { color: #96627B; }
+a { color: #2aa198; }
+a:hover { text-decoration: none; }
+.MathJax { color: #586e75; }
 
-.claim { background: #96627B; color: #494955; }
-.claim .MathJax { color: #EEE8D5; }
-.claim .title { color: #EEE8D5; }
-
-.proof { background: #EEE8D5; }
-.proof .title { font-style: italic; font-weight: normal; }
+.WebProofTheorem { background: #A6BBAE; color: transparent; /*#4D6168;*/ }
+.WebProofTheorem .MathJax { color: transparent; /*#4D6168;*/ }
+/*.WebProofTheorem .title { color: #EEE8D5; }*/
+.proof, .note { background: #EEE8D5; }

@@ -1,11 +1,13 @@
 body { color: #5f5f5f; }
 h1 { color: #586E75; }
-a { color: #2aa198; }
-a:hover { text-decoration: none; }
-/**:not(.MathJax_Display) > .MathJax { color: #657B83; }*/
-.MathJax { color: #586E75; }
+a { color: #586E75; text-decoration: none; }
+a:hover { text-decoration: underline; }
+/*.MathJax { color: #586E75; }*/
 
-.WebProofTheorem, .note, .proof { background: #F3F3F3; border-radius: 5px; }
-/*.claim .title { color: #93A1A1; }*/
+.WebProofTheorem { background: #C4D5CE; }
+.proof, .note { background: #F3F3F3; }
 
-/*.proof { background: #F3F3F3; border-radius: 5px; }*/
+.WebProofTheorem { border-top-left-radius: 5px; border-top-right-radius: 5px; }
+.proof, .note { border-radius: 5px; }
+.WebProofTheorem + .proof { border-top-left-radius: 0; border-top-right-radius: 0; }
+/*CSS is stupid: Can't make corners of .WebProofTheorem not preceding .proof round.*/

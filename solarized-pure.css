@@ -4,9 +4,7 @@ a { color: #2aa198; }
 a:hover { text-decoration: none; }
 .MathJax { color: #586e75; }
 
-.WebProofTheorem { background: #073642; color: #839496; }
-.WebProofTheorem .MathJax { color: #93a1a1; }
+.WebProofTheorem { background: #073642; color: #93a1a1; }
+.WebProofTheorem .MathJax { color: #839496; }
 .WebProofTheorem .title { color: #93A1A1; }
-
 .proof, .note { background: #EEE8D5; }
-.WebProofTheorem + .proof { margin-top: -20px; }
